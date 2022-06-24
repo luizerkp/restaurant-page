@@ -1,0 +1,28 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "A restaurant page that makes use of webpack node modules for controlling entry and output",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizerkp/restaurant-page.git"
+  },
+  "keywords": [],
+  "author": "Luis Tamarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luizerkp/restaurant-page/issues"
+  },
+  "homepage": "https://github.com/luizerkp/restaurant-page#readme",
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  }
+}
