@@ -1,4 +1,4 @@
-import githubLogo from './imgs/GitHubMarkSmall.png';
+import githubLogo from './imgs/GitHubMarkSmallLight.png';
 
 
 // adds footer content to the page
@@ -20,10 +20,8 @@ var footer = (function() {
     footerDiv.appendChild(a);
     footerDiv.appendChild(footerPara_2);
 
-    const buildFooter = () => {
-        return document.body.appendChild(footerDiv);
-    }
-
+    const buildFooter = () => document.body.appendChild(footerDiv);
+    
     return {
         buildFooter: buildFooter
     }
