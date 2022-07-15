@@ -2,7 +2,7 @@ import logoImg from './imgs/logo.png';
 
 var navMenu = (function (){
     const headerRightDivContent = document.createElement('div');
-    const navItems = ['Location', 'Menu', 'About', 'Deals'];
+    const navItems = ['Location', 'Menu', 'Contact', 'About'];
     
     headerRightDivContent.setAttribute('id', 'header-right');
 
@@ -31,6 +31,7 @@ var navMenu = (function (){
     const getNavMenu = () => headerRightDivContent;
 
     return {
+        getNavItems: () => navItems,
         getNavMenu : getNavMenu
     };
 })();
@@ -68,5 +69,7 @@ var header = (function () {
         getHeader : getHeader
     }
 })();
+
+export const navItemsContent = navMenu.getNavItems();
 
 export { header };

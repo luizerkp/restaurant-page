@@ -1,21 +1,15 @@
 import './css/style.css';
 import './css/normalize.css';
 import { footer } from './footerContent.js';
-import { header } from './headerContent.js';
-// import logo from './imgs/.png';
-
+import { loadPage } from './helper.js';
 
 var buildPageContent = (function (){
-    const content = document.querySelector('#content');
-    footer.buildFooter();
+    const contentDiv = loadPage.getContentDiv();
+    document.body.appendChild(contentDiv);
+    loadPage.load('Location');
 
-    return {
-        getContentDiv: () => content
-    }
 })();
 
-var buildHeaderContent = (function () {
-    const contentDiv = buildPageContent.getContentDiv();
-    const headerDivContent = header.getHeader();
-    contentDiv.appendChild(headerDivContent);
+var buildFooterContent = (function () {
+    footer.buildFooter();
 })();

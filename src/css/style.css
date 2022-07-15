@@ -16,7 +16,6 @@ body {
 #header {
     display: flex;
     min-height: 135px;
-    /* background-color: black; */
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
@@ -27,6 +26,7 @@ body {
     justify-content: center;
     align-items: left;
 }
+
 #header-left>img{
     padding-top: 20px;
     width: 300px;
@@ -43,6 +43,7 @@ body {
     gap:10px;
     list-style-type: none;
 }
+
 .nav-item {
     text-align: center;
     font-weight: bolder;
@@ -55,7 +56,52 @@ body {
     cursor: pointer;
     color: goldenrod;
 }
-/* Sticky Footer and credit */
+.hero-text {
+    font-size: 48px;
+}
+#locationDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    flex-direction: column;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.address-div {
+    font-size: 20px;
+}
+address {
+    font-style: normal;
+}
+address > a {
+    line-height: 1.5;
+    color: rgb(177, 129, 7);
+}
+
+.hours-div {
+    font-size: 18px;
+    margin-top: 20px;
+    
+}
+.hours-div > ul {
+    list-style: none;
+    padding-right: 30px;
+}
+.hours-div > ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.preview-img {
+    width: 800px;
+    height: auto;
+}
+/* Sticky Footer */
 .footer {
     display: flex;
     justify-content: center;
