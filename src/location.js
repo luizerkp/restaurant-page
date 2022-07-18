@@ -1,4 +1,4 @@
-// import bugersOnTray from './imgs/burgers-on-tray.png';
+import bugersOnTray from './imgs/burgers-on-tray.png';
 
 
 var addressContent = (function() {
@@ -58,20 +58,17 @@ var hoursContent = (function() {
 
 var previewContent = (function() {
     // preview content
-   const previewDiv = document.createElement('div');
-//    const previewImg = document.createElement('img');
-   const previewPara = document.createElement('p');
-//    previewImg.src = bugersOnTray;
-//    previewImg.alt = "Burgers on a tray";
-//    previewImg.setAttribute('id', 'preview-img');
-   previewPara.textContent = "Come for the best burgers in the world!";
+    const previewDiv = document.createElement('div');
+    const previewImg = document.createElement('img');
+    previewImg.src = bugersOnTray;
+    previewImg.alt = "Burgers on a tray";
+    previewDiv.setAttribute('id', 'preview-div');
 
-//   previewDiv.appendChild(previewImg);
-  previewDiv.appendChild(previewPara);
-
- return {
-    getPreview: () => previewDiv
-  }
+    previewDiv.appendChild(previewImg);
+    
+    return {
+        getPreview: () => previewDiv
+    }
 
 })();
 
