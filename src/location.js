@@ -28,7 +28,8 @@ var addressContent = (function() {
 
 
     return {
-        getAddress: () => addressDiv
+        getAddress: () => addressDiv,
+        getPhoneLink: () => phoneLink,
     }
 
 })();
@@ -100,5 +101,7 @@ var locationContent = (function() {
     }
 
 })();
+
+export const phone = addressContent.getPhoneLink();
 
 export { locationContent };
