@@ -8,6 +8,15 @@ var buildPageContent = (function (){
     document.body.appendChild(contentDiv);
     loadPage.load('Location');
 
+    const navItems = document.querySelectorAll('.nav-item');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            loadPage.load(e.target.id);
+        }
+        );
+    });
+
 })();
 
 var buildFooterContent = (function () {

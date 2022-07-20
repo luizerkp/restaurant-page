@@ -1,30 +1,47 @@
 import { navItemsContent } from "./headerContent.js";
 import { locationContent } from "./location.js";
 import { header } from './headerContent.js';
+import { contactPageContent } from "./contact.js";
 
 
 var loadPage = (function() {
 
+    const pages = {
+        'location': locationContent.getLocationPage,
+        // 'menu': menuContent.getMenuPageContent,
+        'contact': contactPageContent.getContactPage,
+        // about: aboutContent.getAboutPageContent
+
+    }
+
     const buildIntialContentDiv = () =>{
         const intialContentDiv = document.createElement('div');
+        const mainContentDiv = document.createElement('div');
         intialContentDiv.setAttribute('id', 'content');
+        mainContentDiv.setAttribute('id', 'main-content');
         const headerDiv = header.getHeader();
         intialContentDiv.appendChild(headerDiv);
+        intialContentDiv.appendChild(mainContentDiv);
+
         return intialContentDiv;
     };
 
     const contentDiv = buildIntialContentDiv();
+
+    
 
     const load = (id) => {
         if (!navItemsContent.includes(id)) {
             alert("Page not found, if problem persists, please contact the developer");
             return window.location.reload();
         }
-       if (id === "Location") {
-            const locationDiv = locationContent.getLocationPage();
-            contentDiv.appendChild(locationDiv);
-       }
+        id = id.toLowerCase();
+        renderContent(id);
 
+    }
+    const renderContent = (id) => {    
+        const mainContent = document.querySelector('#main-content');
+        mainContent.replaceWith(pages[id]()); 
     }
 
     return {

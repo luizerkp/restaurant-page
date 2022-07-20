@@ -20,7 +20,9 @@ var navMenu = (function (){
             li.textContent = item;
             ul.appendChild(li);
         });
+
         nav.appendChild(ul);
+        
         return nav;
     }
 

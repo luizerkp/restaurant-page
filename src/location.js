@@ -17,7 +17,7 @@ var addressContent = (function() {
     addressTag.appendChild(addressLink);
 
     // phone link and text
-    phoneLink.innerText = "(206) 55*-021*";
+    phoneLink.innerText = "(206) 55* - 021*";
     phoneLink.href = "tel:20655*021*";
     addressTag.appendChild(phoneLink);
 
@@ -76,7 +76,8 @@ var previewContent = (function() {
 var locationContent = (function() {
 
     const locationDiv = document.createElement('div');
-    locationDiv.setAttribute('id', 'locationDiv');
+    locationDiv.classList.add('location-page');
+    locationDiv.setAttribute('id', 'main-content');
 
     const previewDiv = previewContent.getPreview();
     locationDiv.appendChild(previewDiv);

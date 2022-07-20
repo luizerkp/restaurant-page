@@ -1,13 +1,75 @@
-import { phone } from "./location";
+
+// phone link imported from location.js
+import { phone } from './location';
+
+// contact object constructor
+class Contact {
+    constructor(name, role, phone, email) {
+        this.name = name;
+        this.role = role;
+        this.phone = phone;
+        this.email = email;
+    }
+} 
+
+// create contact Divs
+const createContactDiv = (contactInfo) => {
+    // crreate contact div
+    let contactDiv = document.createElement('div');
+    let contactHeader = document.createElement('h3');
+    let lineBreak = document.createElement('br');
+    contactDiv.classList.add('contact');
+    contactHeader.classList.add('contact-header');
+
+    // create contact header
+    contactHeader.textContent = contactInfo.role + ' ' + contactInfo.name;
+
+    // create email link
+    let contactEmail = document.createElement('a');
+    contactEmail.href = 'mailto:' + contactInfo.email + '?subject = Contact ' + contactInfo.name + '&body = Message';
+    contactEmail.innerText = contactInfo.email;
+
+    // create phone link
+    let contactPhone = document.createElement('a');
+    contactPhone.href = 'tel:' + contactInfo.phone;
+    contactPhone.innerText = contactInfo.phone;
+
+    contactDiv.appendChild(contactHeader);
+    contactDiv.appendChild(contactEmail);
+    contactDiv.appendChild(lineBreak);
+    contactDiv.appendChild(contactPhone);
+
+    return contactDiv;
+}    
 
 var reservations = (function () {
     const reservationsDiv = document.createElement('div');
-    const reservationsEmail = document.createElement('a');
-    reservationsEmail.href = "mailto:Luizersburgershack@gmail.com?subject = Reservations&body = Message";
-    reservationsEmail.innerText = "Email Us to make a reservation";
-    reservationsDiv.appendChild(phone);
-    reservationsDiv.appendChild(reservationsEmail);
-    reservationsDiv.classList.add('reservations-div');
+    const reservationsDivHeader = document.createElement('h1');
+    const reservationsDivPara = document.createElement('p');
+    const line = document.createElement('hr');
+
+
+
+    // css classes
+    reservationsDivHeader.classList.add('header-text');
+    reservationsDiv.classList.add('reservations-div'); 
+
+    // email contact link
+    const reservationsContactInfo = new Contact('Desk', 'Reservations', phone.innerText, 'Luizersburgershack@lbgsmail.com');
+    const reservationsContactDiv = createContactDiv(reservationsContactInfo);
+
+    // header text for reservations page
+    reservationsDivHeader.textContent = 'Reservations & Orders by Email or Phone:';
+    reservationsDivPara.innerText = 'We are open for reservations 24/7. Please call or email us for a reservation.\n\
+    We strongly recommend making a reservation as our venue space is limited.';
+
+
+    // append all elements to reservations div
+    reservationsDiv.appendChild(reservationsDivHeader);
+    reservationsDiv.appendChild(reservationsDivPara);
+    reservationsDiv.appendChild(reservationsContactDiv);
+    reservationsDiv.appendChild(line);
+    
 
     return {
         getReservations: () => reservationsDiv
@@ -16,42 +78,55 @@ var reservations = (function () {
 
 var contacts = (function () {
     const contactsDiv = document.createElement('div');
+    const contactsDivHeader = document.createElement('h1');
+    
+    // css classes
+    contactsDivHeader.classList.add('header-text');
     contactsDiv.classList.add('contacts-div');
 
+    // header text for contacts page
+    contactsDivHeader.textContent = 'Contact the Team:';
 
     // restaurant manager contact info
-    const contactsManagerEmail = document.createElement('a');
-    contactsManagerEmail.href = "mailto:janelledoe@gmail.com?subject = Contact Janelle&body = Message";
-    contactsManagerEmail.innerText = "Email our manager Janelle";
-    const contactsManagerPhone = document.createElement('a');
-    contactsManagerPhone.href = "tel:20656*021*";
-    contactsManagerPhone.innerText = "Call manager Janelle";
+    const restaurantManager = new Contact('Janelle', 'Restaurant Manager', '(206) 56* - 021*', 'janelledoe@lbgsmail.com');
+    const headChef = new Contact('Alex', 'Head Chef', '(206) 56* - 021*', 'alexthecheft@lbgsmail.com',);
+    const owner = new Contact('Luizer', 'Owner', '(206) 56* - 021*', 'luizer@lbgsmail.com');
 
-    // head chef contact info
-    const contactsHeadChefEmail = document.createElement('a');
-    contactsHeadChefEmail.href = "mailto:Alexthecheft@gmail.com?subject = Contact Alex&body = Message";
-    contactsHeadChefEmail.innerText = "Email our head chef Alex";
-    const contactsHeadChefPhone = document.createElement('a');
-    contactsHeadChefPhone.href = "tel:20657*021*";
-    contactsHeadChefPhone.innerText = "Call our head chef";
+    const restaurantManagerDiv = createContactDiv(restaurantManager);
+    const headChefDiv = createContactDiv(headChef);
+    const ownerDiv = createContactDiv(owner);
 
-    // restaurant owner contact info
-    const contactsOwnerEmail = document.createElement('a');
-    contactsOwnerEmail.href = "mailto:Luizer@gmail.com?subject = Contact Luis&body = Message";
-    contactsOwnerEmail.innerText = "Email the owner Luizer";
-    const contactsOwnerPhone = document.createElement('a');
-    contactsOwnerPhone.href = "tel:20658*021*";
-    contactsOwnerPhone.innerText = "Call the owner Luizer";
+    // append all elements to contacts div
+    contactsDiv.appendChild(contactsDivHeader);
+    contactsDiv.appendChild(restaurantManagerDiv);
+    contactsDiv.appendChild(headChefDiv);
+    contactsDiv.appendChild(ownerDiv);
 
-    contactsDiv.appendChild(contactsManagerEmail);
-    contactsDiv.appendChild(contactsManagerPhone);
-    contactsDiv.appendChild(contactsHeadChefEmail);
-    contactsDiv.appendChild(contactsHeadChefPhone);
-    contactsDiv.appendChild(contactsOwnerEmail);
-    contactsDiv.appendChild(contactsOwnerPhone);
-    
     return {
         getContacts: () => contactsDiv
     }
     
 })();
+
+var contactPageContent = (function () {
+    const contactPageDiv = document.createElement('div');
+
+    // get the contact page content
+    const reservationsDivContent = reservations.getReservations();
+    const contactsDivContent = contacts.getContacts();
+    
+
+    // adds class and id to the contact page div
+    contactPageDiv.classList.add('contact-page');
+    contactPageDiv.setAttribute('id', 'main-content');
+
+    // adds the contact page content to the contact page div
+    contactPageDiv.appendChild(reservationsDivContent);
+    contactPageDiv.appendChild(contactsDivContent);
+
+    return {
+        getContactPage: () => contactPageDiv
+    }
+})();
+
+export { contactPageContent };

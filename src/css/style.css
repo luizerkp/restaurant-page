@@ -1,3 +1,5 @@
+
+
 body {
     padding: 0;
     min-height: 100vh;
@@ -61,7 +63,7 @@ body {
     font-size: 48px;
 }
 
-#locationDiv {
+.location-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,15 +75,16 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.address-div {
+.address-div, .contacts-div, .reservations-div {
     font-size: 20px;
 }
 
-address {
+address, .contact {
     font-style: normal;
 }
 
-address>a {
+address>a, .contact>a {
+    text-underline-offset: 5px;
     line-height: 1.5;
     color: rgb(177, 129, 7);
 }
@@ -115,6 +118,28 @@ address>a {
     flex-shrink: 0;
     min-width: 100%;
     min-height: auto;
+}
+
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    flex-direction: column;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.reservations-div > hr {
+    margin-top: 40px;
+}
+.contact-header {
+    margin-bottom: 0px;
+}
+
+.header-text {
+    font-size: 36px;
 }
 
 /* Sticky Footer */
