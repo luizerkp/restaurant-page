@@ -1,5 +1,6 @@
 import { navItemsContent } from "./headerContent.js";
 import { locationContent } from "./location.js";
+import { aboutContent } from "./about.js";
 import { header } from './headerContent.js';
 import { contactPageContent } from "./contact.js";
 
@@ -10,7 +11,7 @@ var loadPage = (function() {
         'location': locationContent.getLocationPage,
         // 'menu': menuContent.getMenuPageContent,
         'contact': contactPageContent.getContactPage,
-        // about: aboutContent.getAboutPageContent
+        'about': aboutContent.getAboutPage,
 
     }
 

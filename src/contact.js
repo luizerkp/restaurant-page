@@ -1,6 +1,6 @@
 
 // phone link imported from location.js
-import { phone } from './location';
+import { phone } from './location.js';
 
 // contact object constructor
 class Contact {
@@ -22,7 +22,7 @@ const createContactDiv = (contactInfo) => {
     contactHeader.classList.add('contact-header');
 
     // create contact header
-    contactHeader.textContent = contactInfo.role + ' ' + contactInfo.name;
+    contactHeader.textContent = contactInfo.role + ' ' + contactInfo.name + ':';
 
     // create email link
     let contactEmail = document.createElement('a');
@@ -48,8 +48,6 @@ var reservations = (function () {
     const reservationsDivPara = document.createElement('p');
     const line = document.createElement('hr');
 
-
-
     // css classes
     reservationsDivHeader.classList.add('header-text');
     reservationsDiv.classList.add('reservations-div'); 
@@ -59,7 +57,7 @@ var reservations = (function () {
     const reservationsContactDiv = createContactDiv(reservationsContactInfo);
 
     // header text for reservations page
-    reservationsDivHeader.textContent = 'Reservations & Orders by Email or Phone:';
+    reservationsDivHeader.textContent = 'Reservations & Orders by Email or Phone';
     reservationsDivPara.innerText = 'We are open for reservations 24/7. Please call or email us for a reservation.\n\
     We strongly recommend making a reservation as our venue space is limited.';
 
@@ -85,12 +83,12 @@ var contacts = (function () {
     contactsDiv.classList.add('contacts-div');
 
     // header text for contacts page
-    contactsDivHeader.textContent = 'Contact the Team:';
+    contactsDivHeader.textContent = 'Contact the Team';
 
     // restaurant manager contact info
-    const restaurantManager = new Contact('Janelle', 'Restaurant Manager', '(206) 56* - 021*', 'janelledoe@lbgsmail.com');
-    const headChef = new Contact('Alex', 'Head Chef', '(206) 56* - 021*', 'alexthecheft@lbgsmail.com',);
-    const owner = new Contact('Luizer', 'Owner', '(206) 56* - 021*', 'luizer@lbgsmail.com');
+    const restaurantManager = new Contact('Janelle Maito', 'Restaurant Manager', '(206) 56* - 021*', 'janelledoe@lbgsmail.com');
+    const headChef = new Contact('Alex Berkman', 'Head Chef', '(206) 56* - 021*', 'alexthecheft@lbgsmail.com',);
+    const owner = new Contact('Luizer Turing', 'Owner', '(206) 56* - 021*', 'luizer@lbgsmail.com');
 
     const restaurantManagerDiv = createContactDiv(restaurantManager);
     const headChefDiv = createContactDiv(headChef);
@@ -103,6 +101,9 @@ var contacts = (function () {
     contactsDiv.appendChild(ownerDiv);
 
     return {
+        getManager: () => restaurantManager,
+        getHeadChef: () => headChef,
+        getOwner: () => owner,
         getContacts: () => contactsDiv
     }
     
@@ -129,4 +130,7 @@ var contactPageContent = (function () {
     }
 })();
 
+export const managerInfo = contacts.getManager();
+export const headChefInfo = contacts.getHeadChef();
+export const ownerInfo = contacts.getOwner();
 export { contactPageContent };

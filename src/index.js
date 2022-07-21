@@ -16,7 +16,6 @@ var buildPageContent = (function (){
         }
         );
     });
-
 })();
 
 var buildFooterContent = (function () {
