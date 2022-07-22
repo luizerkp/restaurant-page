@@ -1,4 +1,5 @@
 import logoImg from './imgs/logo.png';
+import { Contact } from './helper';
 
 var navMenu = (function (){
     const headerRightDivContent = document.createElement('div');

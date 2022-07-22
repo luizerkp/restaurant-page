@@ -1,16 +1,8 @@
-
 // phone link imported from location.js
 import { phone } from './location.js';
 
-// contact object constructor
-class Contact {
-    constructor(name, role, phone, email) {
-        this.name = name;
-        this.role = role;
-        this.phone = phone;
-        this.email = email;
-    }
-} 
+// // Imports contact class from helper.js
+import { createContact } from './helper.js';
 
 // create contact Divs
 const createContactDiv = (contactInfo) => {
@@ -53,7 +45,7 @@ var reservations = (function () {
     reservationsDiv.classList.add('reservations-div'); 
 
     // email contact link
-    const reservationsContactInfo = new Contact('Desk', 'Reservations', phone.innerText, 'Luizersburgershack@lbgsmail.com');
+    const reservationsContactInfo = createContact('Desk', 'Reservations', phone.innerText, 'Luizersburgershack@lbgsmail.com');
     const reservationsContactDiv = createContactDiv(reservationsContactInfo);
 
     // header text for reservations page
@@ -86,9 +78,9 @@ var contacts = (function () {
     contactsDivHeader.textContent = 'Contact the Team';
 
     // restaurant manager contact info
-    const restaurantManager = new Contact('Janelle Maito', 'Restaurant Manager', '(206) 56* - 021*', 'janelledoe@lbgsmail.com');
-    const headChef = new Contact('Alex Berkman', 'Head Chef', '(206) 56* - 021*', 'alexthecheft@lbgsmail.com',);
-    const owner = new Contact('Luizer Turing', 'Owner', '(206) 56* - 021*', 'luizer@lbgsmail.com');
+    const restaurantManager = createContact('Janelle Maito', 'Restaurant Manager', '(206) 56* - 021*', 'janelledoe@lbgsmail.com');
+    const headChef = createContact('Alex Berkman', 'Head Chef', '(206) 56* - 021*', 'alexthecheft@lbgsmail.com',);
+    const owner = createContact('Luizer Turing', 'Owner', '(206) 56* - 021*', 'luizer@lbgsmail.com');
 
     const restaurantManagerDiv = createContactDiv(restaurantManager);
     const headChefDiv = createContactDiv(headChef);
@@ -109,7 +101,7 @@ var contacts = (function () {
     
 })();
 
-var contactPageContent = (function () {
+var contactContent = (function () {
     const contactPageDiv = document.createElement('div');
 
     // get the contact page content
@@ -133,4 +125,4 @@ var contactPageContent = (function () {
 export const managerInfo = contacts.getManager();
 export const headChefInfo = contacts.getHeadChef();
 export const ownerInfo = contacts.getOwner();
-export { contactPageContent };
+export { contactContent };

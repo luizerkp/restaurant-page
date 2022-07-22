@@ -130,7 +130,7 @@ address>a,
     padding: 10px;
 }
 
-.contact-page, .about-page {
+.contact-page, .about-page, .menu-page {
     flex-direction: column;
 }
 
@@ -185,6 +185,30 @@ address>a,
     margin-top: 40px;
     width: 90%;
  }
+.styles-div-collection {
+    display: flex;
+    justify-content: center;
+}
+
+.styles-div-item {
+    font-size: 18px;
+    text-align: left;
+}
+.styles-div-item > h4 {
+    text-align: center;
+}
+.styles-div-item>ul {
+    list-style: none;
+    padding-right: 30px;
+}
+.styles-div-item>ul>li {
+    margin-bottom: 10px;
+}
+
+.styles-div-item>hr {
+    width: 30%;
+    transform: rotate(90deg);
+}
 
 /* Sticky Footer */
 .footer {

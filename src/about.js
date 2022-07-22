@@ -1,8 +1,8 @@
 import { managerInfo, headChefInfo, ownerInfo } from "./contact.js";
+import { createImgCredit } from "./helper.js";
 import managerStockImg from "./imgs/manager-stock.jpg";
 import headChefStockImg from "./imgs/headChef-stock.jpg";
 import ownerStockImg from "./imgs/owner-stock.jpg";
-
 
 var createBioDivHelpers = (function () {
     const buildBioContent = (personInfo, imgContent) => {
@@ -12,13 +12,13 @@ var createBioDivHelpers = (function () {
         let bioHeader = document.createElement('h3');
         let bioPara = document.createElement('p');
 
+        // adds classes
         bioDiv.classList.add('bio-div');
-        // bioImgDiv.classList.add('bio-img-div');
         bioHeader.classList.add('bio-header');
         bioPara.classList.add('bio-para');
         biontextDiv.classList.add('bio-text-div');
-    
 
+        // adds text content
         bioHeader.textContent = 'About the ' + personInfo.role + ' ' + personInfo.name + ':';
         bioPara.textContent = personInfo.bio;
 
@@ -36,40 +36,9 @@ var createBioDivHelpers = (function () {
         return bioDiv;     
     }
 
-    const createImgCredit = (img, creditOnwerLink, creditOnwerName, creditSiteLink, creditSiteName) => {
-        let figure = document.createElement('figure');
-        let creditOnwer = document.createElement('a');
-        let hostSite = document.createElement('a');
-        let figCaption = document.createElement('figcaption');
-
-        img.classList.add('bio-img');
-        
-        // create links
-        creditOnwer.href = creditOnwerLink;
-        creditOnwer.innerText = creditOnwerName;
-        hostSite.href = creditSiteLink;
-        hostSite.innerText = creditSiteName;
-
-        // create text for figcaption
-        figCaption.appendChild(document.createTextNode('Photo by '));
-        figCaption.appendChild(creditOnwer);
-        figCaption.appendChild(document.createTextNode(' on '));
-        figCaption.appendChild(hostSite);
-
-        // append all to figure
-        figure.appendChild(img);
-        figure.appendChild(figCaption);
-
-        figCaption.classList.add('img-credit');
-
-        return figure;
-    }
-
     return {
-        buildBioContent : buildBioContent,
-        createImgCredit : createImgCredit
+        buildBioContent : buildBioContent
     }
-
 })();
 
 var ownerDivContent = (function () {
@@ -77,6 +46,7 @@ var ownerDivContent = (function () {
     const ownerImg = document.createElement('img');
     ownerImg.src = ownerStockImg;
     ownerImg.alt = 'Man wearing a business suit sitting on a couch while reading a book';
+    ownerImg.classList.add('bio-img');
 
     // img credit info
     const ownerImgCreditOwnerName = 'Paul White';
@@ -85,7 +55,7 @@ var ownerDivContent = (function () {
     const ownerImgCreditSiteLink = 'https://unsplash.com/s/photos/entrepeneur?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
 
     // create img with credit
-    const ownerImgWithCredit = createBioDivHelpers.createImgCredit(ownerImg, ownerImgCreditOwnerLink, ownerImgCreditOwnerName, ownerImgCreditSiteLink, ownerImgCreditSiteName);
+    const ownerImgWithCredit = createImgCredit(ownerImg, ownerImgCreditOwnerLink, ownerImgCreditOwnerName, ownerImgCreditSiteLink, ownerImgCreditSiteName);
 
     // Owner's bio
     ownerInfo.bio = `Luizer Turing is an entrepeneur and owner of the restaurant. He is passionate about food, Luizer's\
@@ -102,7 +72,6 @@ var ownerDivContent = (function () {
     return {
         getOwnerBioDiv : () => ownerBioDiv
     }
-    
 })();
 
 var managerDivContent = (function () {
@@ -110,6 +79,7 @@ var managerDivContent = (function () {
     const managerImg = document.createElement('img');
     managerImg.src = managerStockImg;
     managerImg.alt = 'Photo of black woman in bussiness casual clothes';
+    managerImg.classList.add('bio-img')
 
     // img credit info
     const managerImgCreditOwnerName = 'Christina @ wocintechchat.com';
@@ -118,7 +88,7 @@ var managerDivContent = (function () {
     const managerImgCreditHostingSiteLink = 'https://unsplash.com/s/photos/manager?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
 
     // create img with credit
-    const imgWithCredit = createBioDivHelpers.createImgCredit(managerImg, managerImgCreditOwnerLink, managerImgCreditOwnerName, managerImgCreditHostingSiteLink, managerImgCreditHostingSiteName);
+    const imgWithCredit = createImgCredit(managerImg, managerImgCreditOwnerLink, managerImgCreditOwnerName, managerImgCreditHostingSiteLink, managerImgCreditHostingSiteName);
 
     managerInfo.bio = `Jannelle Maito, has an extensive track record in the resaturant industry with over 15 years\
     of experience. She has spearheaded the development of Luizer's Burgershack from it's humble beginnings to\
@@ -140,6 +110,7 @@ var headChefDivContent = (function () {
     const headChefImg = document.createElement('img');
     headChefImg.src = headChefStockImg;
     headChefImg.alt = 'Photo of chef in a restaurant kitchen';
+    headChefImg.classList.add('bio-img')
 
     // img credit info
     const headChefImgCreditOwnerName = 'Louis Hansel';
@@ -148,7 +119,7 @@ var headChefDivContent = (function () {
     const headChefImgCreditHostingSiteLink = 'https://unsplash.com/s/photos/entrepeneur?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
 
     // create img with credit
-    const imgWithCredit = createBioDivHelpers.createImgCredit(headChefImg, headChefImgCreditOwnerLink, headChefImgCreditOwnerName, headChefImgCreditHostingSiteLink, headChefImgCreditHostingSiteName);
+    const imgWithCredit = createImgCredit(headChefImg, headChefImgCreditOwnerLink, headChefImgCreditOwnerName, headChefImgCreditHostingSiteLink, headChefImgCreditHostingSiteName);
 
     headChefInfo.bio = `Alex Berkman is a master chef with a passion for great food. He is a graduate of the of\
     The Culinary Institute of America and has been a chef for over 10 years. He is a passionate about food and\
@@ -183,18 +154,15 @@ var aboutContent = (function () {
     const managerBio = managerDivContent.getManagerBioDiv();
     const headChefBio = headChefDivContent.getHeadChefBioDiv();
 
-
     aboutDiv.appendChild(introPara);
     aboutDiv.appendChild(line);
     aboutDiv.appendChild(ownerBio);
     aboutDiv.appendChild(managerBio);
     aboutDiv.appendChild(headChefBio);
 
-
     return {
         getAboutPage : () => aboutDiv
     }
-
 })();
 
 export { aboutContent };

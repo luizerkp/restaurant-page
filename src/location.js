@@ -21,17 +21,13 @@ var addressContent = (function() {
     phoneLink.href = "tel:20655*021*";
     addressTag.appendChild(phoneLink);
 
-
     // append all elements to the address div
     addressDiv.appendChild(addressTag);
     
-
-
     return {
         getAddress: () => addressDiv,
         getPhoneLink: () => phoneLink,
     }
-
 })();
 
 var hoursContent = (function() {
@@ -54,7 +50,6 @@ var hoursContent = (function() {
     return {
         getHours: () => hoursDiv
     }
-    
 })();
 
 var previewContent = (function() {
@@ -70,7 +65,6 @@ var previewContent = (function() {
     return {
         getPreview: () => previewDiv
     }
-
 })();
 
 var locationContent = (function() {
@@ -100,7 +94,6 @@ var locationContent = (function() {
     return {
         getLocationPage: () => locationDiv
     }
-
 })();
 
 export const phone = addressContent.getPhoneLink();
