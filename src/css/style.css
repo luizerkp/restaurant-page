@@ -130,7 +130,9 @@ address>a,
     padding: 10px;
 }
 
-.contact-page, .about-page, .menu-page {
+.contact-page,
+.about-page,
+.menu-page {
     flex-direction: column;
 }
 
@@ -150,7 +152,7 @@ address>a,
     font-size: 20px;
 }
 
-.reservations-div>hr{
+.reservations-div>hr {
     height: 3px;
     margin-top: 40px;
 }
@@ -173,41 +175,82 @@ address>a,
     height: 550px;
 }
 
-.img-credit > a {
+.img-credit>a {
     font-size: 13px;
     text-decoration: none;
     font-weight: bolder;
     color: white;
- }
+}
 
- .about-page > hr {
+.about-page>hr {
     height: 3px;
     margin-top: 40px;
     width: 90%;
- }
-.styles-div-collection {
+}
+
+/* Menu page */
+.menu-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-select-options{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.35rem;
+    font-weight: bold;
+    padding: 10px;
+    width: 175px;
+    margin-bottom: 45px;
+}
+
+select{
+    cursor:pointer;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: left;
+    text-align: left;
+
+}
+
+.menu-item-img-div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-right: 10px;
+
+}
+
+.menu-item-text-div {
+    display: flex;
+    align-items: baseline;
+}
+
+.menu-item-img {
+    max-width: 275px;
+    height: auto;
+}
+
+.menu-item-text-description {
+    max-width: 600px;
+    font-size: 20px;
+}
+
+.menu-item-text-price {
     display: flex;
     justify-content: center;
-}
-
-.styles-div-item {
-    font-size: 18px;
-    text-align: left;
-}
-.styles-div-item > h4 {
-    text-align: center;
-}
-.styles-div-item>ul {
-    list-style: none;
-    padding-right: 30px;
-}
-.styles-div-item>ul>li {
-    margin-bottom: 10px;
-}
-
-.styles-div-item>hr {
-    width: 30%;
-    transform: rotate(90deg);
+    align-items: center;
+    width: 75px;
 }
 
 /* Sticky Footer */
