@@ -161,6 +161,10 @@ figure {
     font-size: 20px;
 }
 
+.bio-para {
+    line-height: 1.4;
+}
+
 .reservations-div {
     display: flex;
     justify-content: center;
