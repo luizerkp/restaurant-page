@@ -1,7 +1,4 @@
-// phone link imported from location.js
 import { phone } from './location.js';
-
-// // Imports contact class from helper.js
 import { createContact } from './helper.js';
 
 // create contact Divs
