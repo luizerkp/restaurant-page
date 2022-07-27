@@ -6,6 +6,17 @@ import deepFriedchickenBitesImgFile from "./imgs/deep-fried-chicken-bites.jpg";
 import elCapitanImgFile from "./imgs/el-capitan.jpg";
 import elPolloLocoImgFile from "./imgs/el-pollo-loco.jpg";
 import elNoPanImgFile from "./imgs/el-no-pan.jpg";
+import mtBrownStoneImgFile from "./imgs/mt-brown-stone.jpg";
+import layeredCookieCrubleImgFile from "./imgs/layered-cookie-crumble.jpg";
+import theBizNeesImgFile from "./imgs/the-biznees.jpg";
+import sodaImgFile from "./imgs/soda.jpg";
+import juiceImgFile from "./imgs/juice.jpg";
+import smoothiesImgFile from "./imgs/smoothies.jpg";
+import friesImgFile from "./imgs/fries.jpg";
+import slawImgFile from "./imgs/slaw.jpg";
+import saladImgFile from "./imgs/salad.jpg";
+import onionRingsImgFile from "./imgs/onion-rings.jpg";
+
 
 function createMenuItem (name, price, description) {
     let menuItem = {
@@ -65,7 +76,6 @@ function createMenuItemDiv (menuItem, imgFigure) {
 
 
 var appetizers = (function (){    
-
     // Appetizer menu item 1
     const loadedFriesDescription = 'Fries loaded with our secret sauce, tortilla chips, chicken, pico de gallo, mexican crema and Guacamole. Topped with chopped cilantro.';
     const loadedFries = createMenuItem('Loaded Fries', '$9.99', loadedFriesDescription);
@@ -123,7 +133,6 @@ var appetizers = (function (){
     return {
         getAppetizersDiv: () => appetizersDiv
     }
-
 })();
 
 var mains = (function (){
@@ -193,34 +202,222 @@ var mains = (function (){
 })();
 
 var desserts = (function (){
-    const tempDiv = document.createElement('div');
-    tempDiv.classList.add('menu-section');
-    tempDiv.textContent = 'temprary placeholder for desserts';
+    // desserts menu item 1
+    const mtBrownStoneDescription = `This tasty treat is a perfect way to end a meal. A scoop of vanilla bean ice cream on top of a decadent chocolate brownee.\
+    Served with topping of caramel drizzle and a chocalate wafer roll to top it off.`;
+    const mtBrownStone = createMenuItem('Mt. Brown Stone', '$11.99', mtBrownStoneDescription);
+    const mtBrownStoneImg = createImage(mtBrownStoneImgFile, 'Image of a cake', 'menu-item-img');
 
+    // desserts menu item 1 img credit info and img with credit
+    const mtBrownStoneImgCreditOwnerName = 'Kobby Mendez';
+    const mtBrownStoneImgCreditOwnerLink = 'https://unsplash.com/@kobbyfotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const mtBrownStoneImgCreditSiteName = 'Unsplash';
+    const mtBrownStoneImgCreditSiteLink = 'https://unsplash.com/s/photos/desserts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // desserts menu item 1 img with credit
+    const mtBrownStoneImgWithCredit = createImgCredit(mtBrownStoneImg, mtBrownStoneImgCreditOwnerLink, mtBrownStoneImgCreditOwnerName, mtBrownStoneImgCreditSiteLink, mtBrownStoneImgCreditSiteName);
+
+    // desserts menu item 1 final div
+    const mtBrownStoneDiv = createMenuItemDiv(mtBrownStone, mtBrownStoneImgWithCredit);
+
+    // desserts menu item 2
+    const layeredCookieCrubleDescription = `Layer upon layer of delicious goodness, this cookie crumble is a treat for the whole family.\
+    It consist of layers on salted caramel ice cream, oreo cookie crumbles, vanilla bean ice cream, chocolate ice cream and more oreo cookie crumbles.\
+    topped with thick chocolate syrup, whipped cream and if you didn't have enough oreo cookies then have some more. This is the perfect treat for sharing.`;
+    const layeredCookieCruble = createMenuItem('Layered Cookie Crumble', '$13.99', layeredCookieCrubleDescription);
+    const layeredCookieCrubleImg = createImage(layeredCookieCrubleImgFile, 'Image of a cookie', 'menu-item-img');
+
+    // desserts menu item 2 img credit info and img with credit
+    const layeredCookieCrubleImgCreditOwnerName = 'Emile Mbunzama';
+    const layeredCookieCrubleImgCreditOwnerLink = 'https://unsplash.com/@emilembunzama?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const layeredCookieCrubleImgCreditSiteName = 'Unsplash';
+    const layeredCookieCrubleImgCreditSiteLink = 'https://unsplash.com/s/photos/desserts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // desserts menu item 2 img with credit
+    const layeredCookieCrubleImgWithCredit = createImgCredit(layeredCookieCrubleImg, layeredCookieCrubleImgCreditOwnerLink, layeredCookieCrubleImgCreditOwnerName, layeredCookieCrubleImgCreditSiteLink, layeredCookieCrubleImgCreditSiteName);
+
+    // desserts menu item 2 final div
+    const layeredCookieCrubleDiv = createMenuItemDiv(layeredCookieCruble, layeredCookieCrubleImgWithCredit);
+
+    // desserts menu item 3
+    const theBizNeesDescription = `A slice of heaven, this slice of cheese cake is a perfect end to any meal.\
+    It is a New York style cheesecake with caramel drizzle and shaving of premium locally sourced chocolate.\
+    Simple and delicious, this is the perfect treat for any occasion.`;
+    const theBizNees = createMenuItem('The Biz Nees', '$9.99', theBizNeesDescription);
+    const theBizNeesImg = createImage(theBizNeesImgFile, 'Image of a cookie', 'menu-item-img');
+
+    // desserts menu item 3 img credit info and img with credit
+    const theBizNeesImgCreditOwnerName = 'Aliona Gumeniuk';
+    const theBizNeesImgCreditOwnerLink = 'https://unsplash.com/@agumeniuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const theBizNeesImgCreditSiteName = 'Unsplash';
+    const theBizNeesImgCreditSiteLink = 'https://unsplash.com/s/photos/desserts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // desserts menu item 3 img with credit
+    const theBizNeesImgWithCredit = createImgCredit(theBizNeesImg, theBizNeesImgCreditOwnerLink, theBizNeesImgCreditOwnerName, theBizNeesImgCreditSiteLink, theBizNeesImgCreditSiteName);
+
+    // desserts menu item 3 final div
+    const theBizNeesDiv = createMenuItemDiv(theBizNees, theBizNeesImgWithCredit);
+
+    const dessertsDiv = document.createElement('div');
+    dessertsDiv.classList.add('menu-section');
+    dessertsDiv.id = 'desserts';
+    dessertsDiv.appendChild(mtBrownStoneDiv);
+    dessertsDiv.appendChild(layeredCookieCrubleDiv);
+    dessertsDiv.appendChild(theBizNeesDiv);
+    
     return {
-        getDessertsDiv: () => tempDiv
+        getDessertsDiv: () => dessertsDiv
     }
-
 })();
 
 var beverages = (function (){
-    const tempDiv = document.createElement('div');
-    tempDiv.classList.add('menu-section');
-    tempDiv.textContent = 'temprary placeholder for beverages';
+    // beverages menu item 1
+    const sodaDescription = `Your choice of coke, sprite, fanta, or water.`;
+    const soda = createMenuItem('Soda', '$2.99', sodaDescription);
+    const sodaImg = createImage(sodaImgFile, 'Image of a glass containing soda', 'menu-item-img');
+
+    // beverages menu item 1 img credit info and img with credit
+    const sodaImgCreditOwnerName = 'Giovanna Gomes';
+    const sodaImgCreditOwnerLink = 'https://unsplash.com/@giisilveira?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const sodaImgCreditSiteName = 'Unsplash';
+    const sodaImgCreditSiteLink = 'https://unsplash.com/s/photos/glass-of-coke?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // beverages menu item 1 img with credit
+    const sodaImgWithCredit = createImgCredit(sodaImg, sodaImgCreditOwnerLink, sodaImgCreditOwnerName, sodaImgCreditSiteLink, sodaImgCreditSiteName);
+
+    // beverages menu item 1 final div
+    const sodaDiv = createMenuItemDiv(soda, sodaImgWithCredit);
+
+    // beverages menu item 2
+    const juiceDescription = `if you are looking for a fresh juice then you can choose from a variety of juices.\
+    We have Lemonade, pink lemonade, orange juice, apple juice, and pineapple juice.`;
+    const juice = createMenuItem('Juice', '$3.99', juiceDescription);
+    const juiceImg = createImage(juiceImgFile, 'Image of a glass containing orange juice', 'menu-item-img');
+
+    // beverages menu item 2 img credit info and img with credit
+    const juiceImgCreditOwnerName = 'ABHISHEK HAJARE';
+    const juiceImgCreditOwnerLink = 'https://unsplash.com/@abhishek_hajare?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const juiceImgCreditSiteName = 'Unsplash';
+    const juiceImgCreditSiteLink = 'https://unsplash.com/s/photos/juice?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // beverages menu item 2 img with credit
+    const juiceImgWithCredit = createImgCredit(juiceImg, juiceImgCreditOwnerLink, juiceImgCreditOwnerName, juiceImgCreditSiteLink, juiceImgCreditSiteName);
+
+    // beverages menu item 2 final div
+    const juiceDiv = createMenuItemDiv(juice, juiceImgWithCredit);
+
+    // beverages menu item 3
+    const smoohtiesDescription = `If a smoothie is more your thing, then you can choose from a variety of smoothies.\
+    Watermelon smoothie, mango smoothie, strawberry smoothie, and pineapple smoothie. Or you can choose from our selection of\
+    of milk shakes that include vanilla, chocolate, salted caramel, and strawberry.`;
+    const smoohties = createMenuItem('Smoothies', '$4.99', smoohtiesDescription);
+    const smoohtiesImg = createImage(smoothiesImgFile, 'Image of a glass containing fruit smoothie', 'menu-item-img');
+
+    // beverages menu item 3 img credit info and img with credit
+    const smoohtiesImgCreditOwnerName = 'Yulia Khlebnikova';
+    const smoohtiesImgCreditOwnerLink = 'https://unsplash.com/@khlebnikovayulia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const smoohtiesImgCreditSiteName = 'Unsplash';
+    const smoohtiesImgCreditSiteLink = 'https://unsplash.com/s/photos/juice?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // beverages menu item 3 img with credit
+    const smoohtiesImgWithCredit = createImgCredit(smoohtiesImg, smoohtiesImgCreditOwnerLink, smoohtiesImgCreditOwnerName, smoohtiesImgCreditSiteLink, smoohtiesImgCreditSiteName);
+
+    // beverages menu item 3 final div
+    const smoohtiesDiv = createMenuItemDiv(smoohties, smoohtiesImgWithCredit);
+
+    const beveragesDiv = document.createElement('div');
+    beveragesDiv.classList.add('menu-section');
+    beveragesDiv.id = 'beverages';
+    beveragesDiv.appendChild(sodaDiv);
+    beveragesDiv.appendChild(juiceDiv);
+    beveragesDiv.appendChild(smoohtiesDiv);  
 
     return {
-        getBeveragesDiv: () => tempDiv
+        getBeveragesDiv: () => beveragesDiv
     }
 })();
 
 var sides = (function (){
-    const tempDiv = document.createElement('div');
-    tempDiv.classList.add('menu-section');
-    tempDiv.textContent = 'temprary placeholder for sides';
+    // sides menu item 1
+    const  friesDescription = `Fries are a staple of any meal. We have a variety of fries that are made with fresh ingredients.\
+    You can choose from regular, wedges, or curly fries.`;
+    const fries = createMenuItem('Fries', '$2.99', friesDescription);
+    const friesImg = createImage(friesImgFile, 'Image of a plate of fries', 'menu-item-img');
 
+    // sides menu item 1 img credit info and img with credit
+    const friesImgCreditOwnerName = 'Giovanna Gomes';
+    const friesImgCreditOwnerLink = 'https://unsplash.com/@giisilveira?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const friesImgCreditSiteName = 'Unsplash';
+    const friesImgCreditSiteLink = 'https://unsplash.com/s/photos/fries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // sides menu item 1 img with credit
+    const friesImgWithCredit = createImgCredit(friesImg, friesImgCreditOwnerLink, friesImgCreditOwnerName, friesImgCreditSiteLink, friesImgCreditSiteName);
+
+    // sides menu item 1 final div
+    const friesDiv = createMenuItemDiv(fries, friesImgWithCredit);
+
+    // sides menu item 2
+    const saladDescription = `A salad is a healthy way to eat. We have a variety of salads that are made with fresh ingredients.\
+    You can choose from a variety of salads: ceasar, garden, and vegie salads.`;
+    const salad = createMenuItem('Salad', '$3.99', saladDescription);
+    const saladImg = createImage(saladImgFile, 'Image of a plate of salad', 'menu-item-img');
+
+    // sides menu item 2 img credit info and img with credit
+    const saladImgCreditOwnerName = 'Giovanna Gomes';
+    const saladImgCreditOwnerLink = 'https://unsplash.com/@giisilveira?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const saladImgCreditSiteName = 'Unsplash';
+    const saladImgCreditSiteLink = 'https://unsplash.com/s/photos/fries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // sides menu item 2 img with credit
+    const saladImgWithCredit = createImgCredit(saladImg, saladImgCreditOwnerLink, saladImgCreditOwnerName, saladImgCreditSiteLink, saladImgCreditSiteName);
+
+    // sides menu item 2 final div
+    const saladDiv = createMenuItemDiv(salad, saladImgWithCredit);
+
+    // sides menu item 3
+    const slawDescription = `Try our house special slaw. This is a tasty treat to accompany your meal. Made daily from fresh ingredients.`;
+    const slaw = createMenuItem('Slaw', '$3.99', slawDescription);
+    const slawImg = createImage(slawImgFile, 'Image of a plate of slaw', 'menu-item-img');
+
+    // sides menu item 3 img credit info and img with credit
+    const slawImgCreditOwnerName = 'Giovanna Gomes';
+    const slawImgCreditOwnerLink = 'https://unsplash.com/@giisilveira?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const slawImgCreditSiteName = 'Unsplash';
+    const slawImgCreditSiteLink = 'https://unsplash.com/s/photos/fries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // sides menu item 3 img with credit
+    const slawImgWithCredit = createImgCredit(slawImg, slawImgCreditOwnerLink, slawImgCreditOwnerName, slawImgCreditSiteLink, slawImgCreditSiteName);
+
+    // sides menu item 3 final div
+    const slawDiv = createMenuItemDiv(slaw, slawImgWithCredit);
+
+    // sides menu item 4
+    const onionRingDescription = `Try our onion ring. This is a tasty treat to accompany your meal. Made daily from fresh ingredients.`;
+    const onionRing = createMenuItem('Onion Ring', '$3.99', onionRingDescription);
+    const onionRingImg = createImage(onionRingsImgFile, 'Image of a plate of onion ring', 'menu-item-img');
+
+    // sides menu item 4 img credit info and img with credit
+    const onionRingImgCreditOwnerName = 'Giovanna Gomes';
+    const onionRingImgCreditOwnerLink = 'https://unsplash.com/@giisilveira?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const onionRingImgCreditSiteName = 'Unsplash';
+    const onionRingImgCreditSiteLink = 'https://unsplash.com/s/photos/fries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+    // sides menu item 4 img with credit
+    const onionRingImgWithCredit = createImgCredit(onionRingImg, onionRingImgCreditOwnerLink, onionRingImgCreditOwnerName, onionRingImgCreditSiteLink, onionRingImgCreditSiteName);
+
+    // sides menu item 4 final div
+    const onionRingDiv = createMenuItemDiv(onionRing, onionRingImgWithCredit);
+
+    const sidesDiv = document.createElement('div');
+    sidesDiv.classList.add('menu-section');
+    sidesDiv.id = 'sides';
+    sidesDiv.appendChild(friesDiv);
+    sidesDiv.appendChild(saladDiv);
+    sidesDiv.appendChild(slawDiv);
+    sidesDiv.appendChild(onionRingDiv);
 
     return {
-        getSidesDiv: () => tempDiv
+        getSidesDiv: () => sidesDiv
     }
 })();
 
@@ -266,7 +463,6 @@ var menuContent = (function (){
     menuPageHeaderDiv.appendChild(menuSelectOptions);
     menuPageDiv.appendChild(menuPageHeaderDiv);
  
-
     // Appends current menu selection to menu page div
     menuPageDiv.appendChild(selections[menuOptions[0]]);
 

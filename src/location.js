@@ -1,5 +1,5 @@
 import bugersOnTray from './imgs/burgers-on-tray.png';
-
+import { createImgCredit } from "./helper.js";
 
 var addressContent = (function() {
     // address loaction content
@@ -60,7 +60,15 @@ var previewContent = (function() {
     previewImg.alt = "Burgers on a tray";
     previewDiv.setAttribute('id', 'preview-div');
 
-    previewDiv.appendChild(previewImg);
+    const previewImgCreditOwnerName = 'Peter Dawn';
+    const previewImgCreditOwnerLink =  'https://unsplash.com/@fifthlane?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    const previewImgCreditSiteName = 'Unsplash';
+    const previewImgCreditSiteLink = 'https://unsplash.com/s/photos/burgers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+    
+    const previewImgWithCredit = createImgCredit(previewImg, previewImgCreditOwnerLink, previewImgCreditOwnerName, previewImgCreditSiteLink, previewImgCreditSiteName);
+
+
+    previewDiv.appendChild(previewImgWithCredit);
     
     return {
         getPreview: () => previewDiv
@@ -81,15 +89,11 @@ var locationContent = (function() {
     locationHeaderText.textContent = 'Hours & Location: ';
     locationDiv.appendChild(locationHeaderText);
     
-
     const locationAddress = addressContent.getAddress();
     locationDiv.appendChild(locationAddress);
 
     const locationHours = hoursContent.getHours();
     locationDiv.appendChild(locationHours);
-
-//     const menuButton = document.createElement('button');
-//     menuButton.setAttribute('id', 'menuButton');
 
     return {
         getLocationPage: () => locationDiv

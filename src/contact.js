@@ -50,7 +50,7 @@ var reservations = (function () {
 
     // header text for reservations page
     reservationsDivHeader.textContent = 'Reservations & Orders by Email or Phone';
-    reservationsDivPara.innerText = 'We are open for reservations 24/7. Please call or email us for a reservation.\n\
+    reservationsDivPara.innerText = 'We are open for reservations 24/7 through Email or during bussiness hours through the phone. Please call or email us for a reservation.\n\
     We strongly recommend making a reservation as our venue space is limited.';
 
 

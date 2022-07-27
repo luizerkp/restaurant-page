@@ -61,6 +61,16 @@ body {
     font-size: 48px;
 }
 
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+/* Location page & contact css */
 .location-page {
     display: flex;
     justify-content: center;
@@ -120,16 +130,7 @@ address>a,
     min-height: auto;
     max-height: 500px;
 }
-
-#main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 15px;
-    padding: 10px;
-}
-
+/* conatct & About pages css */
 .contact-page,
 .about-page,
 .menu-page {
