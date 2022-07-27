@@ -87,7 +87,6 @@ var loadPage = (function () {
         getContentDiv: () => contentDiv,
         load: load,
     }
-
 })();
 
 export { loadPage, createImgCredit, createContact };
