@@ -25,7 +25,6 @@ var footer = (function() {
     return {
         buildFooter: buildFooter
     }
-    
 })();
 
 export { footer };
