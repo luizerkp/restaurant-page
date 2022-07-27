@@ -30,7 +30,7 @@ body {
 
 #header-left>img {
     padding-top: 20px;
-    width: 300px;
+    width: 250px;
 
 }
 
@@ -124,12 +124,20 @@ address>a,
     overflow: hidden;
 }
 
-#preview-div>img {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: auto;
-    max-height: 500px;
+#preview-img{
+    height: 300px;
+    width: auto;
 }
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px;
+}
+
 /* conatct & About pages css */
 .contact-page,
 .about-page,
@@ -153,9 +161,21 @@ address>a,
     font-size: 20px;
 }
 
+.reservations-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.reservations-div>p{
+    margin: 0 20px;
+}
+
 .reservations-div>hr {
     height: 3px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .contact-header {
@@ -173,7 +193,7 @@ address>a,
 
 .bio-img {
     width: auto;
-    height: 550px;
+    height: 300px;
 }
 
 .img-credit>a {
@@ -273,3 +293,130 @@ select{
     height: 20px;
     width: 20px;
 }
+
+/* ########################################## Responsive layout ########################################################*/
+@media only screen and (max-width: 800px) {
+    #header-left>img {
+        width: 200px;
+    }
+
+    #preview-img {
+        height: 250px;
+    }
+
+    .header-text {
+        font-size: 24px;
+    }
+
+    .reservations-div, .contacts-div, .bio-para {
+        overflow: hidden;
+        font-size: 16px;
+    }
+
+    .bio-text-div {
+        max-width: 100%;
+        margin: 0 20px;
+    }
+
+    figure {
+        margin: 10px;
+    }
+
+    #intro-para, .menu-item-text-description {
+        font-size: 18px;
+    }
+
+    .menu-item-text-price {
+        margin-right: 15px;
+    }   
+}
+
+@media only screen and (max-width: 600px) {
+    #preview-img {
+        height: 180px;
+    }
+
+    .footer, .menu-item {
+        align-items: center;
+        flex-direction: column;
+    }
+    .menu-item {
+        flex-direction: column-reverse;
+    }
+
+    .hours-div, .bio-para, .menu-item-text-description {
+        font-size: 14px;
+    }
+
+    .hero-text {
+        font-size: 32px;
+    }
+
+    .bio-header {
+        font-size: 20px;
+    }
+    .bio-div {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #header-left>img {
+        width: 175px;
+    }
+
+    #preview-img {
+        height: 170px;
+    }
+
+    .hero-text {
+        font-size: 24px;
+    }    
+    
+    .footer {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    #header-left>img {
+        width: 120px;
+    }
+
+    #preview-img {
+        height: 115px;
+    }
+
+    .hero-text, .header-text, .bio-header {
+        font-size: 18px;
+    }
+
+    .nav-item, .reservations-div, .contacts-div {
+        font-size: 14px;
+    }
+    .address-div{
+        font-size: 16px;
+    }
+    .img-credit{
+        font-size: 8px;
+    }
+    #intro-para {
+        font-size: 14px;
+    }
+
+    .menu-item-img {
+        max-width: 150px;
+    }
+    .menu-item-text-description {
+        max-width: 200px;
+    }
+    .menu-item-text-price {
+        max-width: 40px;
+    }
+    .img-credit>a {
+        font-size: 10px;
+    }
+
+}
+
+

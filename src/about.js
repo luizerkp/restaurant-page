@@ -82,7 +82,7 @@ var managerDivContent = (function () {
     managerImg.classList.add('bio-img')
 
     // img credit info
-    const managerImgCreditOwnerName = 'Christina @ wocintechchat.com';
+    const managerImgCreditOwnerName = 'Christina...';
     const managerImgCreditOwnerLink = 'https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
     const managerImgCreditHostingSiteName = 'Unsplash';
     const managerImgCreditHostingSiteLink = 'https://unsplash.com/s/photos/manager?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';

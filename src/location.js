@@ -58,6 +58,7 @@ var previewContent = (function() {
     const previewImg = document.createElement('img');
     previewImg.src = bugersOnTray;
     previewImg.alt = "Burgers on a tray";
+    previewImg.setAttribute('id','preview-img');
     previewDiv.setAttribute('id', 'preview-div');
 
     const previewImgCreditOwnerName = 'Peter Dawn';
