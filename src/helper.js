@@ -67,8 +67,6 @@ var loadPage = (function () {
 
     const contentDiv = buildIntialContentDiv();
 
-
-
     const load = (id) => {
         if (!navItemsContent.includes(id)) {
             alert("Page not found, if problem persists, please contact the developer");

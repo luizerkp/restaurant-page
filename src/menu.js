@@ -435,11 +435,11 @@ var menuContent = (function (){
     menuSelectOptions.setAttribute('id', 'menu-select-options');
 
     const selections = {
-        'Appetizers': appetizers.getAppetizersDiv(),
-        'Mains': mains.getMainsDiv(),
-        'Desserts': desserts.getDessertsDiv(),
-        'Beverages': beverages.getBeveragesDiv(),
-        'Sides': sides.getSidesDiv()
+        'Appetizers': appetizers.getAppetizersDiv,
+        'Mains': mains.getMainsDiv,
+        'Desserts': desserts.getDessertsDiv,
+        'Beverages': beverages.getBeveragesDiv,
+        'Sides': sides.getSidesDiv
     }
 
     const createMenuSelectOptions = (options) => {
@@ -455,7 +455,7 @@ var menuContent = (function (){
         );
     }
 
-    const menuOptions = ['Appetizers', 'Mains', 'Desserts', 'Beverages', 'Sides'];
+    const menuOptions = Object.keys(selections);
     createMenuSelectOptions(menuOptions);
 
    // Appends current menu selection to menu page div  
@@ -464,10 +464,10 @@ var menuContent = (function (){
     menuPageDiv.appendChild(menuPageHeaderDiv);
  
     // Appends current menu selection to menu page div
-    menuPageDiv.appendChild(selections[menuOptions[0]]);
+    menuPageDiv.appendChild(selections[menuOptions[0]]());
 
     menuSelectOptions.addEventListener('change', (e) => {
-        let selectedMenu = selections[e.target.value];
+        let selectedMenu = selections[e.target.value]();
         renderMenu(selectedMenu);
     });
 
