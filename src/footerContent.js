@@ -1,6 +1,5 @@
 import githubLogo from './imgs/GitHubMarkSmallLight.png';
 
-
 // adds footer content to the page
 var footer = (function() {
     const footerDiv = document.createElement('div');
@@ -13,6 +12,7 @@ var footer = (function() {
     myGithubLogo.src= githubLogo
     a.appendChild(myGithubLogo)
     a.setAttribute('id', 'github-logo');
+    a.target = '_blank';
     const date = new Date().getFullYear();
     footerPara_1.textContent = `Copyright © ${date} Luis Tamarez`
     footerPara_2.textContent = "All Rights Reserved";
