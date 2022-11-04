@@ -154,6 +154,7 @@ figure {
 
 .bio-div {
     display: flex;
+    justify-content: center;
 }
 
 .bio-text-div {
